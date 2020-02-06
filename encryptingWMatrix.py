@@ -1,11 +1,11 @@
-import string
+
 
 WORD = str(input())
 KEY = str(input())
 KEY = KEY*(len(WORD)//len(KEY))
 def encrypt(word,key,isEncrypt=True):
     abc = []
-    chars = string.printable
+    chars = [chr(i) for i in range(32,128)]
     for i in range(len(chars)):
         abc.append(chars[i:len(chars):1] + chars[:i:1])
     if isEncrypt:
